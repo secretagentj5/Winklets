@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const backButton = document.getElementById('back-button');
     const notification = document.getElementById('notification');
+    const loader = document.getElementById('loader');
 
     // --- State Variables ---
     let allStickers = []; // Master list of all sticker objects
@@ -38,39 +39,46 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {Event} e - The change event from the file input.
      */
     function handleFileSelect(e) {
-        const files = e.target.files;
-        if (files.length === 0) {
-            showEmptyState("No files found in the selected folder.");
-            return;
-        }
+        loader.style.display = 'flex';
 
-        allStickers = [];
-        const allowedExtensions = ['.png'];
-        
-        Array.from(files).forEach(file => {
-            const path = file.webkitRelativePath;
-            const isPng = allowedExtensions.some(ext => path.toLowerCase().endsWith(ext));
-            
-            if(isPng) {
-                const pathParts = path.split('/');
-                
-                const category = pathParts.length > 2 ? pathParts[1] : 'Uncategorized';
-                
-                allStickers.push({
-                    path: path,
-                    category: category,
-                    file: file,
-                    url: URL.createObjectURL(file) // Create URL once for performance
-                });
+        // Use setTimeout to allow the UI to update and show the loader before processing
+        setTimeout(() => {
+            const files = e.target.files;
+            if (files.length === 0) {
+                showEmptyState("No files found in the selected folder.");
+                loader.style.display = 'none';
+                return;
             }
-        });
 
-        if (allStickers.length === 0) {
-            showEmptyState("No PNG stickers found. Please check your folder structure.");
-            return;
-        }
-        
-        showCategoryPreviews();
+            allStickers = [];
+            const allowedExtensions = ['.png'];
+            
+            Array.from(files).forEach(file => {
+                const path = file.webkitRelativePath;
+                const isPng = allowedExtensions.some(ext => path.toLowerCase().endsWith(ext));
+                
+                if(isPng) {
+                    const pathParts = path.split('/');
+                    const category = pathParts.length > 2 ? pathParts[1] : 'Uncategorized';
+                    
+                    allStickers.push({
+                        path: path,
+                        category: category,
+                        file: file,
+                        url: URL.createObjectURL(file) // Create URL once for performance
+                    });
+                }
+            });
+
+            if (allStickers.length === 0) {
+                showEmptyState("No PNG stickers found. Please check your folder structure.");
+                loader.style.display = 'none';
+                return;
+            }
+            
+            showCategoryPreviews();
+            loader.style.display = 'none';
+        }, 10);
     }
 
     /**
