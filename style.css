@@ -314,3 +314,41 @@ header {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 }
+
+@media (max-width: 768px) {
+    /* ... (existing media query) ... */
+}
+
+@media (max-width: 480px) {
+    /* ... (existing media query) ... */
+}
+
+/* --- Loader --- */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.loader-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--border-color);
+    border-top-color: var(--highlight-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
