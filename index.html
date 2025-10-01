@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticker Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="title comic-title">Sticker Gallery</div>
+            <div class="controls">
+                <input type="text" id="search-input" class="search-input" placeholder="Search all stickers...">
+            </div>
+        </header>
+        
+        <main>
+            <div class="controls" style="margin-bottom: 2rem; justify-content: flex-end;">
+                 <button id="back-button" class="btn">⬅️ Back to Categories</button>
+                 <button id="select-folder-button" class="btn">📂 Select Sticker Folder</button>
+            </div>
+            
+            <div id="gallery-container">
+                 <div class="empty-state-message">
+                    Welcome! Please click "Select Sticker Folder" to begin. <br>
+                    Make sure your stickers are in subfolders to create categories.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <input type="file" id="folder-input" webkitdirectory directory multiple style="display:none;">
+    
+    <div id="notification">Sticker copied to clipboard!</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
