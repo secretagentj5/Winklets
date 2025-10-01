@@ -1,21 +1,27 @@
-# Sticker Gallery
+# 📂 Sticker Gallery
 
-Sticker Gallery is a modern web app that lets users browse, search, and copy PNG stickers from local folders with a stylish, responsive gallery interface.
+A simple, modern, and local-first web application to browse and copy your sticker collection. Organize your PNG stickers into folders, and this tool will create a beautiful, searchable gallery for you.
 
-## How It Works
+## ✨ Features
 
-- **Browse Stickers:** Open `sticker.html` in your browser and click "Select Sticker Folder" to choose a directory containing PNG stickers. Stickers organized in subfolders are sorted by category.
-- **Search & Filter:** Easily filter stickers by name using the search bar, or by category using the category options.
-- **Copy Stickers:** Click any sticker to copy it as an image. (Works with Chromium-based browsers.)
-- **Add More Stickers:** Add new PNG stickers to your folder/subfolders at any time—just refresh/reselect the folder in the app to see them.
+* **Local Folder Selection**: No uploads needed! The app runs entirely in your browser.
+* **Automatic Categorization**: Creates categories based on your subfolder names.
+* **Live Search**: Instantly find any sticker by its file name.
+* **One-Click Copy**: Copies the selected sticker to your clipboard with a single click.
+* **Modern UI**: A sleek, responsive interface with an animated background.
+* **No Dependencies**: Just plain HTML, CSS, and JavaScript.
 
-## Usage Instructions
+## 🚀 How to Use
 
-1. Download or clone this repository.
-2. Open `sticker.html` with any Chromium-based browser (Chrome/Edge recommended).
-3. Click "Select Sticker Folder" and choose a folder containing your PNG stickers. You can organize stickers in subfolders.
-4. Use the "Search" bar to filter by name, or browse by categories.
-5. Click a sticker to copy it to your clipboard.
+1.  Download the project files (`index.html`, `style.css`, `script.js`).
+2.  Open the `index.html` file in a modern web browser (like Chrome, Firefox, or Edge).
+3.  Click the "📂 Select Sticker Folder" button.
+4.  Choose the main folder that contains your sticker subfolders.
+5.  Browse your categories, search, and click to copy!
+
+## 🛠️ Recommended Folder Structure
+
+For the app to work best, structure your stickers like this:
 
 ## How to Help
 
