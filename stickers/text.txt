@@ -1,1 +1,9 @@
 Add Subfolders as a category and stickers in them to be displayed
+
+├── Memes/
+│   ├── sticker1.png
+│   └── sticker2.png
+├── Reactions/
+│   ├── happy.png
+│   └── sad.png
+└── UncategorizedSticker.png
