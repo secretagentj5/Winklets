@@ -1,3 +1,0 @@
-# cats.txt
-# Placeholder file for cat stickers.
-# Add cat sticker metadata or references here.
